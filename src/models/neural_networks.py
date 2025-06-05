@@ -1,0 +1,3 @@
+"""
+Implementacje sieci neuronowych
+"""

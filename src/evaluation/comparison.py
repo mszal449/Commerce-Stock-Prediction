@@ -1,0 +1,3 @@
+"""
+Moduł do porównywania modeli
+"""
