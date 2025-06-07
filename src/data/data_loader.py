@@ -4,29 +4,26 @@ Powinien umożliwiać wczytanie danych z pliku, oraz pobranie go przez url.
 Dane powinny być zwracane w formacie pd.DataFrame.
 """
 import pandas as pd
+import subprocess
+import os
+from pathlib import Path
 
-def load_retail_data() -> pd.DataFrame:
-    """
-    Ładuje dane Online Retail II Dataset
+
+def download_dataset(competition_name: str = "store-sales-time-series-forecasting", 
+                     download_path: str = "") -> str:
+    """Pobiera dataset z Kaggle Competition"""
+    if download_path is None:
+        download_dir = Path(__file__).parent.parent.parent / "data" / "raw"
+    else:
+        download_dir = Path(download_path)
     
-    Args:
-        file_path: Ścieżka do pliku z danymi
-        
-    Returns:
-        DataFrame z danymi retail
-    """
-    pass
-
-
-def load_favorita_data() -> pd.DataFrame:
-    """
-    Ładuje dane Corporación Favorita dataset
+    download_dir.mkdir(parents=True, exist_ok=True)
     
-    Args:
-        data_dir: Katalog z plikami danych
-        
-    Returns:
-        Tuple z DataFrames: (train, stores, oil)
-    """
-    pass
+    subprocess.run([
+        "kaggle", "competitions", "download", 
+        "-c", competition_name,
+        "-p", str(download_dir)
+    ], check=True)
+    
+    return str(download_dir)
 

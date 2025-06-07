@@ -4,6 +4,9 @@
 
 Projekt bada zastosowanie sieci neuronowych jako rozwiązania do prognozowania popytu na produkty w handlu. Kluczowym celem jest odpowiedzenie na pytanie, czy modele neuronowe – od prostych sieci gęstych (MLP) po bardziej zaawansowane jak LSTM – mogą skutecznie przewidywać zapotrzebowanie na towary i tym samym wspierać optymalizację kosztów związanych z zaopatrzeniem i stanami magazynowymi.
 
+DATASET:
+https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data
+
 ## Struktura projektu
 
 ```
@@ -14,7 +17,7 @@ project/
 │   ├── data/                  # Moduły do przetwarzania danych
 │   ├── models/                # Implementacje modeli
 │   ├── evaluation/            # Metryki i ewaluacja
-│   └── utils/                 # Funkcje pomocnicze
+│   └── utils/                # Funkcje pomocnicze
 ├── results/                   # Wyniki eksperymentów
 ├── config/                    # Pliki konfiguracyjne
 └── requirements.txt           # Zależności
